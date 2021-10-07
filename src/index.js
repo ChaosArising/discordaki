@@ -96,12 +96,12 @@ module.exports = async function (input, options = {}) {
         options.gameType = options.gameType.toLowerCase();
 
         // error handling
-        if (!input) return console.log("Discord.js Akinator Error: Message or CommandInteraction was not Provided.\nNeed Help? Join Our Discord Server at 'https://discord.gg/P2g24jp'");
+        if (!input) return console.log("Error: Message or CommandInteraction was not Provided.");
         // if the input is not a Discord.Message or CommandInteraction, return an error
-        if (!input.client) return console.log("Discord.js Akinator Error: Message or CommandInteration Provided was Invalid.\nNeed Help? Join Our Discord Server at 'https://discord.gg/P2g24jp'");
-        if (!input.guild) return console.log("Discord.js Akinator Error: Cannot be used in Direct Messages.\nNeed Help? Join Our Discord Server at 'https://discord.gg/P2g24jp'");
-        if (!fs.existsSync(`${__dirname}/translations/${options.language}.json`)) return console.log(`Discord.js Akinator Error: Language "${options.language}" Not Found. Examples are: "en" or "fr" or "es".\nNeed Help? Join Our Discord Server at 'https://discord.gg/P2g24jp'`);
-        if (!["animal", "character", "object"].includes(options.gameType)) return console.log(`Discord.js Akinator Error: Game Type "${options.gameType}" Not Found. Choose from: "animal", "character" or "object".\nNeed Help? Join Our Discord Server at 'https://discord.gg/P2g24jp'`);
+        if (!input.client) return console.log("Error: Message or CommandInteration Provided was Invalid.");
+        if (!input.guild) return console.log("Error: Cannot be used in Direct Messages.");
+        if (!fs.existsSync(`${__dirname}/translations/${options.language}.json`)) return console.log(`Error: Language "${options.language}" Not Found. Examples are: "en" or "fr" or "es".`);
+        if (!["animal", "character", "object"].includes(options.gameType)) return console.log(`Error: Game Type "${options.gameType}" Not Found. Choose from: "animal", "character" or "object".`);
         
         try {
             inputData.client = input.client,
@@ -109,7 +109,7 @@ module.exports = async function (input, options = {}) {
             inputData.author = input.author ? input.author : input.user,
             inputData.channel = input.channel
         } catch {
-            return console.log("Discord.js Akinator Error: Failed to Parse Input for Use.\nJoin Our Discord Server for Support at 'https://discord.gg/P2g24jp'");
+            return console.log("Error: Failed to Parse Input for Use.");
         }
 
         // defining for easy use
@@ -349,8 +349,8 @@ module.exports = async function (input, options = {}) {
         attemptingGuess.delete(inputData.guild.id)
         games.delete(inputData.guild.id)
         if (e == "DiscordAPIError: Unknown Message") return;
-        else if (e == "DiscordAPIError: Cannot send an empty message") return console.log("Discord.js Akinator Error: Discord.js v13 or Higher is Required.\nNeed Help? Join Our Discord Server at 'https://discord.gg/P2g24jp'");
-        console.log("Discord.js Akinator Error:")
+        else if (e == "DiscordAPIError: Cannot send an empty message") return console.log("Error: Discord.js v13 or Higher is Required.");
+        console.log("Akinator Error:")
         console.log(e);
     }
 }
