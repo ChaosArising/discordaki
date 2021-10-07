@@ -1,6 +1,6 @@
 {
     "gameEnded": "Game Ended",
-    "gameEndedDesc": "your Game has Ended due to 1 Minute of Inactivity.",
+    "gameEndedDesc": "your game has ended due to 1 Minute of inactivity.",
     "question": "Question",
     "progress": "Progress",
     "pleaseType": "Please Type...",
@@ -20,6 +20,6 @@
     "wellPlayed": "Well Played!",
     "guessedRightOneMoreTime": "I guessed right one more time!",
     "character": "Character",
-    "defeated": "bravo! You have defeated me...",
+    "defeated": "congrats! You have defeated me...",
     "gameForceEnd": "your game was successfully ended!"
 }
